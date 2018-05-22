@@ -1,0 +1,7 @@
+{
+    "name": "solweigdev/php-system-login",
+    "description": "Secure and fast login system in php",
+    "type": "project",
+    "license": "MIT",
+    "require": {}
+}
