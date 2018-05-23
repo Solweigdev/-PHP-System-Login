@@ -14,7 +14,7 @@ require ("vendor/autoload.php");
 
 
  // Include class login
- require_once("app/classes/login.php");
+ $User = new App\classes\User;
 
  // Verifier si l'utilisateur est déjà identifier
  

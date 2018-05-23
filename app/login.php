@@ -1,6 +1,6 @@
 <div class="container-login">
 	<div class="wrap-login">
-		<form class="login-form validate-form">
+		<form class="login-form validate-form" action="" method="post">
 			<span class="login-form-title">
 				Login
 			</span>
@@ -16,7 +16,7 @@
 			</div>
             
 			<div class="container-login-form-btn">
-				<button class="login-form-btn">
+				<button class="login-form-btn" type="submit">
 					Send
                 </button>
             </div>
