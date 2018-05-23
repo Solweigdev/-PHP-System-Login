@@ -3,5 +3,10 @@
     "description": "Secure and fast login system in php",
     "type": "project",
     "license": "MIT",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app"
+        }
+    }
 }
