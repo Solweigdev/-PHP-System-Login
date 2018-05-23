@@ -5,12 +5,19 @@
  * @link https://github.com/Solweigdev/-PHP-System-Login
  */
 
+ // Include auto loader to call class
+require ("vendor/autoload.php");
+ 
+
  // Include configuration to connection in your database
- require_once("config/config.php");
+ require_once("app/config/config.php");
+
 
  // Include class login
- require_once("classes/login.php");
+ require_once("app/classes/login.php");
 
+ // Verifier si l'utilisateur est déjà identifier
+ 
 ?>
 
 <!DOCTYPE html>
@@ -24,47 +31,11 @@
 </head>
 <body>
     
-    <div class="container-login">
-		<div class="wrap-login">
-			<form class="login-form validate-form">
-				<span class="login-form-title">
-					Send Us A Message
-				</span>
-
-
-				<div class="wrap-login validate-input" data-validate="Name is required">
-					<label class="label-login" for="name">Full name</label>
-					<input id="name" class="login" type="text" name="name" placeholder="Enter your name...">
-					<span class="focus-login"></span>
-				</div>
-
-
-				<div class="wrap-login validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<label class="label-login" for="email">Email Address</label>
-					<input id="email" class="login" type="text" name="email" placeholder="Enter your email...">
-					<span class="focus-login"></span>
-				</div>
-
-				
-
-				<div class="wrap-login validate-input" data-validate = "Message is required">
-					<label class="label-login" for="message">Message</label>
-					<textarea id="message" class="login" name="message" placeholder="Type your message here..."></textarea>
-					<span class="focus-login"></span>
-				</div>
-
-				<div class="container-login-form-btn">
-					<button class="login-form-btn">
-						Send
-					</button>
-				</div>
-
-			</form>
-
-			<div class="login-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
-			</div>
-		</div>
-	</div>
+    <?php if(App\classes\Session::exists('user')): ?>
+        <?php require("app/home.php"); ?>
+    <?php else: ?>
+        <?php require("app/login.php"); ?>
+    <?php endif ?> 
 
 </body>
 </html>
